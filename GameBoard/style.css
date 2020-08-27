@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url("./background.jpg");
+    background-repeat: none;
+    background-size: cover;
+}
+
+.welcome {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    width: 80%;
+    height: 80vh;
+    color: #fff;
+}
+
+.heading p {
+    margin: 50px;
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #F2C2CB;
+}
+
+.welcome main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 200px;
+}
+
+.game {
+    display: block;
+    background-color: transparent;
+    color: #D5D50B;
+    padding: 20px;
+    font-size: 1.1rem;
+    transition: all .4s ease-in-out;
+}
+
+.game:hover {
+    font-weight: 300;
+    color: #fff;
+    background: #111;
+    transform: scale(1.1);
+}
+
+.game:hover .level{
+    opacity: 1;
+}
+
+.game .level {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    opacity: 0;
+    transition: opacity .4s ease-in-out;
+}
+
+.level>* {
+    cursor: pointer;
+}
+
+.snake-frame {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+}
+
+.endGame {
+    display: none;
+    background-color: transparent;
+    color: #F2E5D9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80vh;
+}
+
+.endGame .msg {
+    margin-top: 25px;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 200px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-group button {
+    font-size: 1.5rem;
+    padding: 15px 10px;
+    transition: all 0.4s ease-in-out;
+    border: none;
+    outline: 0;
+    display: block;
+    border-radius: 15px;
+}
+
+.btn-group button:hover {
+    color: #E7D8CD;
+    font-weight: 500;
+    background: #57646B;
+    cursor: pointer;
+    box-shadow: 10px 10px 8px #888888;
+}
+
+/* Minesweeper */
+
+#board {
+    border: 1px solid #333;
+    background-color: #ccc;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #676E7A;
+    color: black;
+    margin: 4px;
+    padding-bottom: 0;
+}
+
+.mine.revealed {
+    background-color: #fff;
+    background-size: 50px 50px;
+    background-image: url(./mine.png);
+}
+
+.revealed {
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    color: black;
+    font-size: 20px;
+    background-color: #fff;
+    line-height: 50px;
+    vertical-align: top;
+}
+
+.flagged {
+    background-image: url("./flag.png");
+    background-size: 50px 50px;
+}
