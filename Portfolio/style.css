@@ -8,7 +8,9 @@
 }
 
 body {
-    background: #585c68;
+    background-image: url("./background.jpg");
+    background-repeat: none;
+    background-size: cover;
     font-size: 14px;
     line-height: 22px;
     color: #555555;
@@ -28,6 +30,7 @@ body {
 .resume {
     width: 800px;
     height: auto;
+    margin: 10px 0;
     display: flex;
     position: absolute;
     left: 50%;
@@ -39,25 +42,19 @@ body {
     background: #0bb5f4;
 }
 
-
-
 .resume .resume_left .resume_profile {
-    width: 100%;
-    height: 280px;
+    width: 300px;
+    height: auto;
 }
 
 .resume .resume_left .resume_profile img {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 .resume .resume_left .resume_content {
     padding: 0 25px;
-    
 }
-
-
-
 
 .resume .title {
     margin-bottom: 20px;
@@ -112,15 +109,16 @@ body {
     color: #b1eaff;
 }
 
-.data a{
+.data a {
     transition: all 0.3s ease-in-out;
 }
-.data a:link{
+
+.data a:link {
     text-decoration: none;
     color: #b1eaff;
 }
 
-.data a:hover{
+.data a:hover {
     text-decoration: underline;
     font-size: 1.1rem;
 }
@@ -134,12 +132,11 @@ body {
     transition: all 0.4s ease-in-out;
 }
 
-.resume .resume_left .resume_skills ul li:hover{
+.resume .resume_left .resume_skills ul li:hover {
     transform: translateX(10px);
     font-size: 1.1rem;
     font-weight: 500;
 }
-
 
 .resume .resume_left .resume_skills ul li .skill_name {
     width: 25%;
@@ -165,11 +162,11 @@ body {
     background: #fff;
 }
 
-.resume .resume_left .resume_social ul li .icon{
+.resume .resume_left .resume_social ul li .icon {
     transition: all 0.4s ease-in-out;
 }
 
-.resume .resume_left .resume_social ul li .icon:hover{
+.resume .resume_left .resume_social ul li .icon:hover {
     background: black;
     color: #fff;
     font-size: 1.2em;
@@ -196,17 +193,15 @@ body {
     overflow: hidden;
 }
 
-.resume_right .bold{
-    transition: all 0.5s ease-in-out;
+.resume_right .resume_item .title .bold {
+    transition: all 0.5s linear;
 }
 
-.resume_right .bold:hover{
-    transform: translateX(150px);
-    cursor: pointer;
+.resume_right .resume_item:hover .title .bold {
+    text-align: center;
     font-size: 1.5rem;
+    color: black;
 }
-
-
 
 .resume .resume_right ul li {
     position: relative;
@@ -223,8 +218,10 @@ body {
     transition: all 0.8s ease-in;
 }
 
-.resume .resume_right ul li .info:hover{
-    font-style: italic;
+.resume .resume_right ul li .info:hover {
+    background: #0BB5F4;
+    padding: 5px;
+    color: #fff;
     cursor: pointer;
 }
 
@@ -232,8 +229,7 @@ body {
     margin-bottom: 0;
 }
 
-.resume .resume_right .resume_work ul li:before,  .resume .resume_right .resume_education ul li:before, 
-.resume .resume_right .resume_project ul li:before{
+.resume .resume_right .resume_work ul li:before, .resume .resume_right .resume_education ul li:before, .resume .resume_right .resume_project ul li:before {
     content: "";
     position: absolute;
     top: 5px;
@@ -244,14 +240,13 @@ body {
     border: 2px solid #0bb5f4;
 }
 
-.resume .resume_right .resume_work ul li:after, .resume .resume_right .resume_education ul li:after,
-.resume .resume_right .resume_project ul li:after{
+.resume .resume_right .resume_work ul li:after, .resume .resume_right .resume_education ul li:after, .resume .resume_right .resume_project ul li:after {
     content: "";
     position: absolute;
     top: 14px;
     left: -21px;
     width: 2px;
-    height: 115px;
+    height: 100%;
     background: #0bb5f4;
 }
 
