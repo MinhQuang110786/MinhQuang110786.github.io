@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-image: url("./background.jpg");
+    background-image: url("./img/background.jpg");
     background-repeat: none;
     background-size: cover;
 }
@@ -156,7 +156,7 @@ body {
 .mine.revealed {
     background-color: #fff;
     background-size: 50px 50px;
-    background-image: url(./mine.png);
+    background-image: url(./img/mine.png);
 }
 
 .revealed {
@@ -171,6 +171,6 @@ body {
 }
 
 .flagged {
-    background-image: url("./flag.png");
+    background-image: url("./img/flag.png");
     background-size: 50px 50px;
 }

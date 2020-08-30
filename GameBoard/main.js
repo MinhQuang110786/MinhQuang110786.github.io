@@ -33,6 +33,7 @@ const audioOver = document.getElementById("overSound");
 const audioMine = document.getElementById("sweeper");
 const audioBomb = document.getElementById("bomb");
 const audioClick = document.getElementById("click");
+
 //Setting the canvas
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
@@ -227,7 +228,7 @@ snakeGame.forEach((speed,index)=>{
     speed.addEventListener('click',()=>{
         gameStart.style.display = "none";
         snakeFrame.style.display = "block";
-        document.body.style.backgroundImage = "url('snake.jpg')";
+        document.body.style.backgroundImage = "url('./img/snake.jpg')";
         snakeSpeed = speeds[index];
         audioStart.pause();
         audioMain.play();
@@ -243,7 +244,7 @@ function gameOver() {
     audioMain.pause();
     audioOver.src = "./audio/gameOver.mp3";
     audioOver.play();
-    document.body.style.backgroundImage = "url('gameOver.jpg')";
+    document.body.style.backgroundImage = "url('./img/gameOver.jpg')";
     msgSnake.textContent = `Congratulation!! You got: ${score} points`;
 };
 
@@ -256,7 +257,7 @@ returnBtnSnake.addEventListener('click', ()=>{
     audioMain.pause();
     audioOver.pause();
     audioStart.play();
-    document.body.style.backgroundImage = "url('background.jpg')"
+    document.body.style.backgroundImage = "url('./img/background.jpg')"
     startGame();
     clearInterval(intervalId);
 });
@@ -267,7 +268,7 @@ restartBtnSnake.addEventListener('click', e => {
     snakeFrame.style.display = "block";
     audioOver.pause();
     audioMain.play();
-    document.body.style.backgroundImage = "url('snake.jpg')"
+    document.body.style.backgroundImage = "url('./img/snake.jpg')"
     startGame();
 })
 
@@ -298,7 +299,7 @@ minesGame.forEach((mine,index)=>{
     mine.addEventListener("click",()=>{
         gameStart.style.display = "none";
         mine_count = minesNums[index];
-        document.body.style.backgroundImage = "url('minesweeper.jpg')";
+        document.body.style.backgroundImage = "url('./img/minesweeper.jpg')";
         audioStart.pause();
         audioMine.play();
         createBoard();
@@ -448,13 +449,13 @@ function showGameOver(won){
     if(won){
         gameEndMine.style.display = "block";
         audioOver.src = "./audio/Victory.mp3";
-        document.body.style.backgroundImage = "url('victory.jpg')";
+        document.body.style.backgroundImage = "url('./img/victory.jpg')";
         msgMine.textContent = "Congratulation! You won!";
     }else{
         gameEndMine.style.display = "block";
         audioOver.src = "./audio/gameOver.mp3";
         msgMine.textContent = "You lose !!";
-        document.body.style.backgroundImage = "url('gameOver.jpg')";
+        document.body.style.backgroundImage = "url('./img/gameOver.jpg')";
     }
     audioOver.play();
 }
@@ -462,7 +463,7 @@ function showGameOver(won){
 returnBtnMine.addEventListener('click',(e)=>{
     gameEndMine.style.display = "none";
     board.style.display = "none";
-    document.body.style.backgroundImage = "url('background.jpg')";
+    document.body.style.backgroundImage = "url('./img/background.jpg')";
     gameStart.style.display = "block";
     audioOver.pause();
     audioStart.play();
@@ -473,7 +474,7 @@ restartBtnMine.addEventListener('click',()=>{
     gameEndMine.style.display = "none";
     gameStart.style.display = "none";
     board.style.display = "flex";
-    document.body.style.backgroundImage = "url('minesweeper.jpg')";
+    document.body.style.backgroundImage = "url('./img/minesweeper.jpg')";
     audioOver.pause();
     audioMine.play();
     clearBoard();
