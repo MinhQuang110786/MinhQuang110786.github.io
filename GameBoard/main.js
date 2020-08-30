@@ -332,6 +332,7 @@ function createBoard() {
     placeTheMines(positionsArray);
 }
 
+//Make the mines on the board
 function createMinePosition() {
     
     let arrMinePositions = [];
@@ -354,6 +355,7 @@ function createMinePosition() {
     return arrMinePositions;
 }
 
+//Place mines
 function placeTheMines(minePositions) {
     for (let i = 0; i < minePositions.length; i++) {
         let eachPosition = minePositions[i];
@@ -391,7 +393,7 @@ function reveal(x, y) {
     let cell = document.getElementById(x + "_" + y);
     if (cell.classList.contains('revealed')) {
         //already revealed
-
+        return;
     }
     else {
         cell.classList.add('revealed');
