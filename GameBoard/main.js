@@ -185,9 +185,9 @@ class Snake {
     checkCollision(head) {
         let leftCollision = (head.col === 0);
         let topCollision = (head.row === 0);
-        let rightCollision = (head.col === widthInBlocks - 1);
-        let bottomCollision = (head.row === heightInBlocks - 1);
-        let wallCollision = leftCollision || topCollision || rightCollision || bottomCollision;
+        let rightColliision = (head.row === heightInBlocks - 1);
+        let wallCollission = (head.col === widthInBlocks - 1);
+        let bottomCollion = leftCollision || topCollision || rightCollision || bottomCollision;
         let selfCollision = false;
         for (let i = 0; i < this.segments.length; i++) {
             if (head.equal(this.segments[i])) {
