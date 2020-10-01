@@ -4,8 +4,8 @@ const snakeGame = document.querySelectorAll('.level .speed');
 
 const minesGame = document.querySelectorAll('.level .difficulty');
 const snakeFrame = document.querySelector('.snake-frame');
-const speeds = [200,100,50];
-const minesNums = [10,15,20];
+const speeds = [200, 100, 50];
+const minesNums = [10, 15, 20];
 
 //End screen snake
 const gameEndSnake = document.querySelector('#endSnake');
@@ -151,16 +151,16 @@ class Snake {
         this.segments.unshift(newHead);
         if (newHead.equal(apple.position)) {
             snakeEating.play();
-            switch(snakeSpeed){
+            switch (snakeSpeed) {
                 case speeds[0]:
                     score++;
                     break;
                 case speeds[1]:
-                        score+=2;;
-                        break;
+                    score += 2;;
+                    break;
                 case speeds[2]:
-                        score+=3;
-                        break;
+                    score += 3;
+                    break;
             }
             apple.move();
         } else {
@@ -185,9 +185,9 @@ class Snake {
     checkCollision(head) {
         let leftCollision = (head.col === 0);
         let topCollision = (head.row === 0);
-        let rightColliision = (head.row === heightInBlocks - 1);
-        let wallCollission = (head.col === widthInBlocks - 1);
-        let bottomCollion = leftCollision || topCollision || rightCollision || bottomCollision;
+        let rightCollision = (head.col === widthInBlocks - 1);
+        let bottomCollision = (head.row === heightInBlocks - 1);
+        let wallCollision = leftCollision || topCollision || rightCollision || bottomCollision;
         let selfCollision = false;
         for (let i = 0; i < this.segments.length; i++) {
             if (head.equal(this.segments[i])) {
@@ -221,11 +221,11 @@ let apple = new Apple('red');
 
 //Active the game
 audioStart.src = "./audio/gameStart.mp3";
-window.addEventListener("keydown",e=>e.keyCode==13?audioStart.play():audioStart.pause());
+window.addEventListener("keydown", e => e.keyCode == 13 ? audioStart.play() : audioStart.pause());
 
-    
-snakeGame.forEach((speed,index)=>{
-    speed.addEventListener('click',()=>{
+
+snakeGame.forEach((speed, index) => {
+    speed.addEventListener('click', () => {
         gameStart.style.display = "none";
         snakeFrame.style.display = "block";
         document.body.style.backgroundImage = "url('./img/snake.jpg')";
@@ -250,7 +250,7 @@ function gameOver() {
 
 //Handle the end
 
-returnBtnSnake.addEventListener('click', ()=>{
+returnBtnSnake.addEventListener('click', () => {
     gameEndSnake.style.display = "none";
     snakeFrame.style.display = "none";
     gameStart.style.display = "block";
@@ -277,7 +277,7 @@ function startGame() {
     score = 0;
     snake = new Snake('yellow');
     apple = new Apple('red');
-    
+
     intervalId = setInterval(function () {
         ctx.clearRect(0, 0, width, height);
         drawScore();
@@ -295,8 +295,8 @@ let mine_count = 0;
 let timeoutId;
 
 
-minesGame.forEach((mine,index)=>{
-    mine.addEventListener("click",()=>{
+minesGame.forEach((mine, index) => {
+    mine.addEventListener("click", () => {
         gameStart.style.display = "none";
         mine_count = minesNums[index];
         document.body.style.backgroundImage = "url('./img/minesweeper.jpg')";
@@ -334,20 +334,20 @@ function createBoard() {
 
 //Make the mines on the board
 function createMinePosition() {
-    
+
     let arrMinePositions = [];
     for (let i = 0; i < mine_count;) {
         let x = Math.floor(Math.random() * row_count);
         let y = Math.floor(Math.random() * col_count);
         let position = [x, y];
         let isUnique = true;
-        arrMinePositions.forEach(function(eachExistingPosition){
-            if(eachExistingPosition[0] == x && eachExistingPosition[1] ==y){
+        arrMinePositions.forEach(function (eachExistingPosition) {
+            if (eachExistingPosition[0] == x && eachExistingPosition[1] == y) {
                 isUnique = false;
             }
         });
 
-        if(isUnique){
+        if (isUnique) {
             arrMinePositions[i] = position;
             i++;
         }
@@ -373,11 +373,11 @@ function handleClick(x, y) {
         for (let i = 0; i < row_count; i++) {
             for (let j = 0; j < col_count; j++) {
                 let cell = document.getElementById(i + "_" + j);
-                if (cell.classList.contains('mine')){
+                if (cell.classList.contains('mine')) {
                     cell.classList.add("revealed");
                     audioBomb.play();
                 }
-               
+
             }
         }
     } else {
@@ -385,8 +385,8 @@ function handleClick(x, y) {
         audioClick.play();
         reveal(x, y);
     }
-    timeoutId = setTimeout(checkIfWon,5000);
-    
+    timeoutId = setTimeout(checkIfWon, 5000);
+
 }
 
 function reveal(x, y) {
@@ -428,32 +428,32 @@ function handleRightClick(x, y) {
         } else {
             cell.classList.add("flagged");
         }
-    } 
+    }
 }
 
 
-function checkIfWon(){
+function checkIfWon() {
     let minesRevealed = document.getElementsByClassName("mine revealed").length;
     let cellsStillHidden = row_count * col_count - document.getElementsByClassName("cell revealed").length;
-    
-    if(minesRevealed>0){
+
+    if (minesRevealed > 0) {
         showGameOver(false);
-    }else if(cellsStillHidden == mine_count){
+    } else if (cellsStillHidden == mine_count) {
         showGameOver(true);
     }
-   
+
 }
 
-function showGameOver(won){
+function showGameOver(won) {
     board.style.display = "none";
     clearTimeout(timeoutId);
     audioMine.pause();
-    if(won){
+    if (won) {
         gameEndMine.style.display = "block";
         audioOver.src = "./audio/Victory.mp3";
         document.body.style.backgroundImage = "url('./img/victory.jpg')";
         msgMine.textContent = "Congratulation! You won!";
-    }else{
+    } else {
         gameEndMine.style.display = "block";
         audioOver.src = "./audio/gameOver.mp3";
         msgMine.textContent = "You lose !!";
@@ -462,7 +462,7 @@ function showGameOver(won){
     audioOver.play();
 }
 
-returnBtnMine.addEventListener('click',(e)=>{
+returnBtnMine.addEventListener('click', (e) => {
     gameEndMine.style.display = "none";
     board.style.display = "none";
     document.body.style.backgroundImage = "url('./img/background.jpg')";
@@ -472,7 +472,7 @@ returnBtnMine.addEventListener('click',(e)=>{
     clearBoard();
 });
 
-restartBtnMine.addEventListener('click',()=>{
+restartBtnMine.addEventListener('click', () => {
     gameEndMine.style.display = "none";
     gameStart.style.display = "none";
     board.style.display = "flex";
@@ -483,9 +483,9 @@ restartBtnMine.addEventListener('click',()=>{
     createBoard();
 })
 
-function clearBoard(){
-   const board = document.getElementById("board");
-   board.innerHTML = "";
+function clearBoard() {
+    const board = document.getElementById("board");
+    board.innerHTML = "";
 }
 
 
