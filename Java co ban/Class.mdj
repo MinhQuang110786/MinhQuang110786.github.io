@@ -1400,7 +1400,7 @@
 											},
 											"font": "Arial;13;1",
 											"left": 349,
-											"top": 463,
+											"top": 466,
 											"width": 166,
 											"height": 13,
 											"text": "Secure Note"
@@ -1435,7 +1435,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 344,
-									"top": 456,
+									"top": 459,
 									"width": 176,
 									"height": 25,
 									"stereotypeLabel": {
@@ -1472,7 +1472,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 349,
-											"top": 486,
+											"top": 489,
 											"width": 166,
 											"height": 13,
 											"text": "-passwordHash: int",
@@ -1481,7 +1481,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 344,
-									"top": 481,
+									"top": 484,
 									"width": 176,
 									"height": 23
 								},
@@ -1496,7 +1496,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 344,
-									"top": 504,
+									"top": 507,
 									"width": 176,
 									"height": 10
 								},
@@ -1536,7 +1536,7 @@
 							"font": "Arial;13;0",
 							"containerChangeable": true,
 							"left": 344,
-							"top": 456,
+							"top": 459,
 							"width": 176,
 							"height": 80,
 							"nameCompartment": {
@@ -1577,7 +1577,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 414,
-									"top": 400,
+									"top": 402,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -1598,7 +1598,7 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"left": 399,
-									"top": 400,
+									"top": 402,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -1619,7 +1619,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 443,
-									"top": 401,
+									"top": 403,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -1637,7 +1637,7 @@
 								"$ref": "AAAAAAF1HAxozNDRiQE="
 							},
 							"lineStyle": 1,
-							"points": "430:455;429:360",
+							"points": "430:458;429:360",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF1HAzEU9FERs8="
@@ -1675,11 +1675,12 @@
 											"_parent": {
 												"$ref": "AAAAAAF1HBEK3tM4lZQ="
 											},
-											"visible": false,
 											"font": "Arial;13;0",
-											"left": 464,
-											"top": 192,
-											"height": 13
+											"left": 725,
+											"top": 468,
+											"width": 154.9970703125,
+											"height": 13,
+											"text": "«interface»"
 										},
 										{
 											"_type": "LabelView",
@@ -1689,7 +1690,7 @@
 											},
 											"font": "Arial;13;1",
 											"left": 725,
-											"top": 479,
+											"top": 483,
 											"width": 154.9970703125,
 											"height": 13,
 											"text": "Crypto"
@@ -1724,9 +1725,9 @@
 									],
 									"font": "Arial;13;0",
 									"left": 720,
-									"top": 472,
+									"top": 463,
 									"width": 164.9970703125,
-									"height": 25,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF1HBEK3tM5F5o="
 									},
@@ -1751,7 +1752,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 720,
-									"top": 497,
+									"top": 501,
 									"width": 164.9970703125,
 									"height": 10
 								},
@@ -1776,7 +1777,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 725,
-											"top": 512,
+											"top": 516,
 											"width": 154.9970703125,
 											"height": 13,
 											"text": "+hash(input: String): int",
@@ -1785,7 +1786,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 720,
-									"top": 507,
+									"top": 511,
 									"width": 164.9970703125,
 									"height": 23
 								},
@@ -1825,9 +1826,9 @@
 							"font": "Arial;13;0",
 							"containerChangeable": true,
 							"left": 720,
-							"top": 472,
+							"top": 463,
 							"width": 164.9970703125,
-							"height": 58,
+							"height": 71,
 							"nameCompartment": {
 								"$ref": "AAAAAAF1HBEK3tM4lZQ="
 							},
@@ -1866,7 +1867,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 619,
-									"top": 476,
+									"top": 477,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -1887,7 +1888,7 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"left": 619,
-									"top": 461,
+									"top": 462,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -1907,8 +1908,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 618,
-									"top": 505,
+									"left": 619,
+									"top": 507,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -1926,7 +1927,7 @@
 								"$ref": "AAAAAAF1HAxozNDRiQE="
 							},
 							"lineStyle": 1,
-							"points": "520:496;719:499",
+							"points": "520:498;719:498",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF1HBIUidQtW6U="
@@ -3301,6 +3302,7 @@
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
 					"name": "Crypto",
+					"stereotype": "interface",
 					"operations": [
 						{
 							"_type": "UMLOperation",
