@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cars</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 th:text="${appName}"></h1>
+        <ul>
+            <li th:each="car:${cars}" class="item">
+                <img th:attr="src=@{'/image/' + ${car.photo} + '.jpg'}, alt=${car.manufacturer}">
+                <div class="description">
+                    <p th:text="Brand + ':  ' +${car.name}"></p>
+                    <p th:text="Manufacturer + ': ' + ${car.manufacturer}"></p>
+                    <p th:text="${car.price} + ' trieu'"></p>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+
+
+</body>
+</html>

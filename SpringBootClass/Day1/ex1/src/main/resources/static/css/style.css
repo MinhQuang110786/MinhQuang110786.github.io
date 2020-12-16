@@ -1,0 +1,21 @@
+ul,li{
+    list-style-type: none;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+img{
+    width: 200px;
+    height: auto;
+    margin-right: 10px;
+}
+.item{
+    display: flex;
+    padding: 15px;
+}
+.description{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
