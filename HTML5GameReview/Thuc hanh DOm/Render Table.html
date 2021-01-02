@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap"
+        rel="stylesheet">
+    <title>Table</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            color: #696966;
+            font-family: "Roboto";
+        }
+
+        .container {
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        table,
+        td,
+        tr,
+        th {
+            border: 1px solid #ccc;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            padding: 15px 20px;
+        }
+
+        th {
+            background-color: cadetblue;
+            color: #fff;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        table tbody tr:not(last-child) {
+            border-bottom: 4px solid #ccc;
+        }
+
+        p span {
+            display: inline-block;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Chi tiết thông tin học viên</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Họ tên</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Số buổi nghỉ</th>
+                    <th>Ngày nghỉ học</th>
+                    <th>Ghi chú</th>
+                    <th>Giảng viên</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Render bảng chứa thông tin lớp học ở đây -->
+            </tbody>
+        </table>
+        <div class="class-detail">
+            <h1>Chi tiết lớp học</h1>
+            <div class="class-inner">
+                <!-- Render thông tin lớp học -->
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    let student_warning = {
+        students: [
+            {
+                name: "Lê Hoài Nam",
+                email: "namlehoai@gmail.com",
+                phone: "123456789",
+                totalOff: 2,
+                sessions: 14,
+                detailInfo: [
+                    {
+                        date: "01-09-2020",
+                        note: "Xin nghỉ ốm",
+                        teacher_name: "Bùi Hiên"
+                    },
+                    {
+                        date: "05-09-2020",
+                        note: "Buồn vì thất tình",
+                        teacher_name: "Nguyễn Hàn Duy"
+                    }
+                ]
+            },
+            {
+                name: "Đỗ Đăng Nguyên",
+                email: "nguyen@gmail.com",
+                phone: "0123987654",
+                totalOff: 2,
+                sessions: 14,
+                detailInfo: [
+                    {
+                        date: "01-09-2020",
+                        note: "Mưa to nên ngại đi học",
+                        teacher_name: "Bùi Hiên"
+                    },
+                    {
+                        date: "05-09-2020",
+                        note: "Trượt lô, nên rút học phí để đánh",
+                        teacher_name: "Nguyễn Hàn Duy"
+                    }
+                ]
+            },
+            {
+                name: "Nguyễn Xuân Ba",
+                email: "3nx92nd@gmail.com",
+                phone: "0344005987",
+                totalOff: 3,
+                sessions: 14,
+                detailInfo: [
+                    {
+                        date: "01-09-2020",
+                        note: "Đang training không đi học được",
+                        teacher_name: "Bùi Hiên"
+                    },
+                    {
+                        date: "07-09-2020",
+                        note: "Soạn giáo án đặc vụ 0175",
+                        teacher_name: "Nguyễn Hàn Duy"
+                    },
+                    {
+                        date: "10-09-2020",
+                        note: "Ganks team còng lưng nên chưa đi học được",
+                        teacher_name: "Nguyễn Hàn Duy"
+                    }
+                ]
+            }
+        ],
+        class: "Lập trình Game 2D Canvas",
+        course: "Lập trình Game",
+        sessions: 14,
+        teachers: [
+            {
+                name: "Bùi Hiên",
+                email: "hien@techmaster.vn",
+                phone: "0123456789"
+            },
+            {
+                name: "Nguyễn Hàn Duy",
+                email: "duy@techmaster.vn",
+                phone: "0987654321"
+            }
+        ]
+    };
+
+
+    const tbody = document.querySelector('table tbody');
+    let id = 1;
+
+    student_warning.students.forEach(student => {
+        let countDetails = student.detailInfo.length;
+        const trow = document.createElement('tr');
+
+        const td1 = document.createElement('td');
+        td1.innerText = id++;
+
+        const td2 = document.createElement('td');
+        td2.innerText = student.name;
+
+        const td3 = document.createElement('td');
+        td3.innerText = student.email;
+
+        const td4 = document.createElement('td');
+        td4.innerText = student.phone;
+
+        const td5 = document.createElement('td');
+        td5.innerText = `${student.totalOff}/${student.sessions}`;
+
+        const td6 = document.createElement('td');
+        for (let i = 0; i < countDetails; i++) {
+            const div = document.createElement('div');
+            div.innerText = `${student.detailInfo[i].date}`;
+
+            td6.appendChild(div);
+            if (i < countDetails - 1)
+                td6.appendChild(document.createElement('hr'))
+        }
+
+        const td7 = document.createElement('td');
+        for (let i = 0; i < countDetails; i++) {
+            const div = document.createElement('div');
+            div.innerText = `${student.detailInfo[i].note}`;
+
+            td7.appendChild(div);
+            if (i < countDetails - 1)
+                td7.appendChild(document.createElement('hr'))
+        }
+
+        const td8 = document.createElement('td');
+        for (let i = 0; i < countDetails; i++) {
+            let n = student_warning.teachers.length;
+            const div = document.createElement('div');
+
+            div.innerText = `${student_warning.teachers[i % n].name}`;
+
+
+            td8.appendChild(div);
+            if (i < countDetails - 1)
+                td8.appendChild(document.createElement('hr'))
+        }
+
+        trow.appendChild(td1);
+        trow.appendChild(td2);
+        trow.appendChild(td3);
+        trow.appendChild(td4);
+        trow.appendChild(td5);
+        trow.appendChild(td6);
+        trow.appendChild(td7);
+        trow.appendChild(td8);
+        tbody.appendChild(trow);
+    });
+
+
+    const class_info = document.querySelector('.class-inner');
+
+    const para1 = document.createElement('p');
+    para1.style.fontWeight = 700;
+    para1.innerHTML = `Lớp học: <span style="font-weight:normal;">${student_warning.class}</span>`;
+
+    const para2 = document.createElement('p');
+    para2.style.fontWeight = 700;
+    para2.innerHTML = `Thuộc khóa học: <span style="font-weight:normal;">${student_warning.course}</span>`;
+
+    const para3 = document.createElement('p');
+    para3.style.fontWeight = 700;
+    para3.innerText = "Danh sách giảng viên:";
+
+    const list = document.createElement('ul');
+    student_warning.teachers.forEach(teacher=>{
+        const li = document.createElement('li');
+        li.innerText = `${teacher.name} (${teacher.email} - ${teacher.phone} `;
+        list.appendChild(li);
+    })
+
+    const para4 = document.createElement('p');
+    para4.style.fontWeight = 700;
+    para4.innerHTML = `Tổng số buổi: <span style="font-weight:normal;">${student_warning.sessions}</span>`;
+    class_info.appendChild(para1);
+    class_info.appendChild(para2);
+    class_info.appendChild(para3);
+    class_info.appendChild(list);
+    class_info.appendChild(para4);
+    //
+
+
+
+</script>
+
+</html>

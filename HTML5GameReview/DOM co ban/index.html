@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class List</title>
+    <style>
+        .text-bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="heading">Bài tập thực hành DOM</h1>
+    <p class="para para-1">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="para para-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="para para-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <div class="content">
+        <h2 id="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem voluptatibus
+                sint molestias sit odit quia labore alias! Accusamus magnam aperiam officiis? Laboriosam numquam at eum
+                dicta quos temporibus in aliquid?</p>
+    </div>
+
+
+    <script>
+        const heading = document.getElementById('heading');
+        heading.style.color = 'red';
+        heading.style.textTransform = 'uppercase';
+
+        const para = document.querySelectorAll('.para');
+        Array.from(para).map(p => {
+            p.style.color = 'blue';
+            p.style.fontSize = '20px';
+        });
+
+        const para3 = document.querySelector('.para-3');
+        para3.insertAdjacentHTML("afterend", "<a href='www.facebook.com'>Facebook</a>");
+
+        document.querySelector("#title").innerText = "This is heading";
+
+        document.querySelector(".description").classList.add("text-bold");
+
+        const btn = document.createElement('button');
+        btn.innerText = 'Click me';
+        para3.parentNode.replaceChild(btn, para3);
+
+        const para2 = document.querySelector(".para-2");
+        const paraN = para2.cloneNode(true);
+        para2.parentNode.insertBefore(paraN, para2.nextSibling);
+
+        const para1 = document.querySelector('.para-1');
+        para1.parentNode.removeChild(para1);
+
+
+    </script>
+</body>
+
+</html>
