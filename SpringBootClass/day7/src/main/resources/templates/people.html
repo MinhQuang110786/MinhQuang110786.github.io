@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center">People in city</h1>
+    <div th:each="city:${groups.keySet()}" class="my-5">
+        <p th:text="${city}" class="text-capitalize font-weight-bold"></p>
+        <ul class="list-group">
+            <li th:each="people:${groups.get(city)}" th:text="${people.fullName}" class="list-group-item"></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

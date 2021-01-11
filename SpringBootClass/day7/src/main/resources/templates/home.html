@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-5">All people data</h1>
+        <div class="list-group d-flex flex-row my-5">
+            <li class="list-group-item">
+                <a th:href="@{/fullName}">Sorted by Name</a>
+            </li>
+            <li class="list-group-item">
+                <a th:href="@{/allJob}">List all jobs</a>
+            </li>
+            <li class="list-group-item">
+                <a th:href="@{/cities}">List all cities</a>
+            </li>
+        </div>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Job</th>
+                <th>City</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="person:${people}">
+                <td th:text="${person.id}"></td>
+                <td th:text="${person.fullName}"></td>
+                <td th:text="${person.job}"></td>
+                <td th:text="${person.city}"></td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+</body>
+</html>
