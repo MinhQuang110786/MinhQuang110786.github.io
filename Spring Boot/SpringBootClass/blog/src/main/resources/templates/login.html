@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Micro Blog - Login</title>
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center my-5">Login</h1>
+    <form action="#" th:action="@{/login}" th:object="${loginRequest}" method="post">
+      <div class="form-group row">
+        <label class="col-form-label col-4">Email</label>
+        <input type="text" placeholder="Email" th:field="*{email}" class="col-8">
+      </div>
+      <div class="form-group row">
+        <label class="col-form-label col-4">Password (3 characters minimum):</label>
+        <input type="password" placeholder="Password" th:field="*{password}" class="col-8">
+      </div>
+      <button type="submit" class="btn btn-primary mb-2 text-center">Login</button>
+    </form>
+    <p th:text="*{errorMessage}">Error Message</p>
+  </div>
+
+</body>
+</html>

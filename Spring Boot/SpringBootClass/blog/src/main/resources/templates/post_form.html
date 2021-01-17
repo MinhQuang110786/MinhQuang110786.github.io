@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container">
+    <nav class="navbar">
+        <h1 th:text="${user.fullname} + ' microBlog'" class="col-8 text-left"></h1>
+        <a href="/logout" class ="col-4 text-right">Logout</a>
+    </nav>
+
+
+    <form th:action="@{'/save/' + ${user.id}}" method="post" th:object="${post}">
+        <div class="form-group">
+            <input type="hidden" th:field="*{id}" th:value="${post.id}">
+        </div>
+        <div class="form-group">
+            <input type="text" th:field="*{title}">
+
+        </div>
+        <div class="form-group">
+            <textarea cols="30" rows="10" th:field="*{content}"></textarea>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+</body>
+</html>
