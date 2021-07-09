@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="common/header::common-header">
+</head>
+
+
+<body>
+
+<div th:replace="common/header::navbar" />
+
+<div class="fluid-container">
+
+    <!-- Static navbar -->
+    <div class="container">
+        <div class="row banner">
+
+
+            <div class="col-xs-8">
+                <div class="panel panel-default" style="margin-top:20px;">
+                    <div class="panel-body">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img src="https://picsum.photos/id/1010/1600/500.jpg" alt="...">
+                                    <div class="carousel-caption">
+                                        <h4>Coco Chanel</h4>
+                                        <p>The best things in life are free. The second best things are very, very expensive</p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="https://picsum.photos/id/1059/1600/500.jpg" alt="...">
+                                    <div class="carousel-caption">
+                                        <h4>Jame Clear</h4>
+                                        <p>The truth is that the dreams that you have are very different from the actions that
+                                            will get you there</p>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://picsum.photos/id/131/1600/500.jpg" alt="...">
+                                    <div class="carousel-caption">
+                                        <h4>Herman Hesse</h4>
+                                        <p>Wisdom, when spoken aloud, always sounds a little foolish. Perhaps that's because
+                                            when we hear something that makes sense to us, we think we already know it. But
+                                            often we don't</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-4">
+                <img th:src="@{/images/logo.png}" alt="No Content" class="img-responsive">
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="panel panel-defaul">
+                    <div class="panel-body">
+                        <a th:href="@{/bookshelf}">
+                            <img th:src="@{/images/bestseller.png}" class="img-responsive">
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="panel panel-defaul">
+                    <div class="panel-body">
+                        <a th:href="@{/hours}">
+                            <img th:src="@{/images/hours.png}" class="img-responsive">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="panel panel-defaul">
+                    <div class="panel-body">
+                        <a th:href="@{/faq}">
+                            <img th:src="@{/images/faq.png}" class="img-responsive">
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="home-headline"><span>Feature Books</span></div>
+        <hr style="margin-top: -15px;" />
+    </div>
+
+    <div class="row">
+        <div id="featured-books" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#featured-books" data-slide-to="0" class="active"></li>
+                <li data-target="#featured-books" data-slide-to="1"></li>
+                <li data-target="#featured-books" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img th:src="@{/images/shelf.png}" class="img-responsive">
+                    <div class="carousel-caption">
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/41uORm5aOQS._AC_SX184_.jpg"  class="img-responsive" alt="Content">
+                            </div>
+                            <div class="col-xs-2">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/51TNl-4eiQL._AC_SX184_.jpg"  class="img-responsive" alt="Content">
+                            </div>
+                            <div class="col-xs-2">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/412Jca2jNgL._AC_SX184_.jpg"  class="img-responsive" alt="Content">
+                            </div>
+                            <div class="col-xs-2">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/51u8ZRDCVoL._AC_SX184_.jpg"  class="img-responsive" alt="Content">
+                            </div>
+                            <div class="col-xs-2">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/51pgGwVQEbS._AC_SX184_.jpg"  class="img-responsive" alt="Content">
+                            </div>
+                            <div class="col-xs-2">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/517s9eYVoHS._AC_SX184_.jpg"  class="img-responsive" alt="Content">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="item">
+                    <img th:src="@{/images/shelf.png}" class="img-responsive">
+                    <div class="carousel-caption">
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/41uORm5aOQS._AC_SX184_.jpg"  class="img-responsive" alt="Content">
+                            </div>
+                            <div class="col-xs-2">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/51TNl-4eiQL._AC_SX184_.jpg"  class="img-responsive" alt="Content">
+                            </div>
+                            <div class="col-xs-2">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/412Jca2jNgL._AC_SX184_.jpg"  class="img-responsive" alt="Content">
+                            </div>
+                            <div class="col-xs-2">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/51u8ZRDCVoL._AC_SX184_.jpg"  class="img-responsive" alt="Content">
+                            </div>
+                            <div class="col-xs-2">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/51pgGwVQEbS._AC_SX184_.jpg"  class="img-responsive" alt="Content">
+                            </div>
+                            <div class="col-xs-2">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/517s9eYVoHS._AC_SX184_.jpg"  class="img-responsive" alt="Content">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="item">
+                    <img th:src="@{/images/shelf.png}" class="img-responsive">
+                    <div class="carousel-caption">
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/41uORm5aOQS._AC_SX184_.jpg"  class="img-responsive" alt="Content">
+                            </div>
+                            <div class="col-xs-2">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/51TNl-4eiQL._AC_SX184_.jpg"  class="img-responsive" alt="Content">
+                            </div>
+                            <div class="col-xs-2">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/412Jca2jNgL._AC_SX184_.jpg"  class="img-responsive" alt="Content">
+                            </div>
+                            <div class="col-xs-2">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/51u8ZRDCVoL._AC_SX184_.jpg"  class="img-responsive" alt="Content">
+                            </div>
+                            <div class="col-xs-2">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/51pgGwVQEbS._AC_SX184_.jpg"  class="img-responsive" alt="Content">
+                            </div>
+                            <div class="col-xs-2">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/517s9eYVoHS._AC_SX184_.jpg"  class="img-responsive" alt="Content">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#featured-books" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#featured-books" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+</div> <!-- /container -->
+
+<div th:replace="common/header::footer" />
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<div th:replace="common/header::body-bottom-scripts" />
+</body>
+</html>

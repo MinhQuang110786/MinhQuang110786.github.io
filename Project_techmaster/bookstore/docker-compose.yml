@@ -1,0 +1,56 @@
+version: '3'
+services:
+
+  bookshopdata:
+    image: mysql:5.7
+    ports:
+      - "5006:3306"
+    restart: always
+    hostname: bookshopdata
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: bookshop
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    volumes:
+      - /data/mysql
+    networks:
+      - bookshopnet
+
+  backend:
+    image: bookshop-image
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    depends_on:
+      - bookshopdata
+
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://bookshopdata:3306/bookshop?autoReconnect=true&failOverReadOnly=false&maxReconnects=10
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: admin
+
+      SPRING_MAIL_HOST: smtp.gmail.com
+      SPRING_MAIL_PORT: 587
+      SPRING_MAIL_USERNAME: quangbookstore1@gmail.com
+      SPRING_MAIL_PASSWORD: Quang2020
+      SPRING_MAIL_PROTOCOL: smtp
+      SPRING_MAIL_TLS: 'true'
+      SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH: 'true'
+      SPRING_MAIL_PROPERTIES_MAIL_SMTP_CONNECTIONTIMEOUT: 500000
+      SPRING_MAIL_PROPERTIES_MAIL_SMTP_TIMEOUT: 500000
+      SPRING_MAIL_PROPERTIES_MAIL_SMTP_WRITETIMEOUT: 500000
+      SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLE_ENABLE: 'true'
+
+    ports:
+      - "9901:8801"
+
+    volumes:
+      - /data/spring-boot-book
+    networks:
+      - bookshopnet
+    restart:  always
+networks:
+  bookshopnet:
